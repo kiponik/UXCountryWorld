@@ -68,17 +68,6 @@ namespace UXCountryWorld
         {
             hideSubMenu();
         }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelWorldDataSubMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void ibtnWorld_Click(object sender, EventArgs e)
         {
             showSubMenu(panelWorldDataSubMenu);
@@ -110,48 +99,10 @@ namespace UXCountryWorld
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "localDBWorldCountryDataSet.Earth". При необходимости она может быть перемещена или удалена.
             this.earthTableAdapter.Fill(this.localDBWorldCountryDataSet.Earth);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "localDBWorldCountryDataSet1.Country". При необходимости она может быть перемещена или удалена.
-            this.countryTableAdapter.Fill(this.localDBWorldCountryDataSet1.Country);
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            /*string connectionString;
-            SqlConnection cnn;
-
-            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Айдын\source\repos\UXCountryWorld\UXCountryWorld\LocalDBWorldCountry.mdf;Integrated Security=True";
-
-            cnn = new SqlConnection(connectionString);
-
-
-            string sql = "select * from Country where Code = '" + comboBox1.Text + "';";
-            SqlCommand cmd = new SqlCommand(sql, cnn);
-            SqlDataReader myreader;
-
-            try
-            {
-                cnn.Open();
-                myreader = cmd.ExecuteReader();
-                while (myreader.Read())
-                {
-
-                    string name = myreader.GetString(1);
-                    string code = myreader.GetString(2);
-                    string capital = myreader.GetString(3);
-                    string population = myreader.GetInt64(4).ToString();
-                    string regionID = myreader.GetInt32(5).ToString();
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-
-        }
+       
 
         private void ibtnMap_Click_1(object sender, EventArgs e)
         {

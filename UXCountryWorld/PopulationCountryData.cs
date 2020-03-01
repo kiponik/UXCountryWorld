@@ -26,7 +26,7 @@ namespace UXCountryWorld
 
                     read.Add(new Population
                     {
-                        Year = values[0],
+                        Name = values[0],
                         CountryPopulation = double.Parse(values[1], CultureInfo.InvariantCulture),
                     });
                 }

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace UXCountryWorld
 {
-    class PopulationByYear
+    public static class PopulationByYear
     {
-        static PopulationByYear()
+        public static void GetCSV(string Name)
         {
 
 
-            var reader = new StreamReader(File.OpenRead(@"countrycz.csv"));
+            var reader = new StreamReader(File.OpenRead(@"country"+Name+".csv"));
 
             var read = new List<PopulationOfCountry>();
 

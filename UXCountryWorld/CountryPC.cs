@@ -27,7 +27,7 @@ namespace UXCountryWorld
             var records = PopulationCountryData.Countries.OrderByDescending(x => x.CountryPopulation).Take(5).ToArray();
 
             Results = records.AsChartValues();
-            Labels = records.Select(x => x.Year).ToList();
+            Labels = records.Select(x => x.Name).ToList();
 
             cartesianChartCP.Series = new SeriesCollection
             {
@@ -59,11 +59,11 @@ namespace UXCountryWorld
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            var a = ((TextBox)sender).Text ?? string.Empty;
-            a = a.ToUpper();
+            var newValue = ((TextBox)sender).Text ?? string.Empty;
+            newValue = newValue.ToUpper();
 
             var records = PopulationCountryData.Countries
-                .Where(x => x.Year.ToUpper().Contains(a))
+                .Where(x => x.Name.ToUpper().Contains(newValue))
                 .OrderByDescending(x => x.CountryPopulation)
                 .Take(15)
                 .ToArray();
@@ -72,7 +72,7 @@ namespace UXCountryWorld
             Results.AddRange(records);
 
             Labels.Clear();
-            foreach (var record in records) Labels.Add(record.Year);
+            foreach (var record in records) Labels.Add(record.Name);
         }
     }
 }

@@ -61,8 +61,8 @@ namespace UXCountryWorld
                                                          
                 }
 
+
                 pieChart1.Series = series;
-                pieChart1.AxisX.Add(ax);
 
                 pieChart1.AxisY.Add(new Axis
                 {
@@ -71,26 +71,6 @@ namespace UXCountryWorld
                 });
                 pieChart1.LegendLocation = LegendLocation.Bottom;
             }
-        }
-        
-
-        private void regionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.regionBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.localDBWorldCountryDataSet);
-
-        }
-
-        private void RegionalData_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "localDBWorldCountryDataSet.Region". При необходимости она может быть перемещена или удалена.
-            this.regionTableAdapter.Fill(this.localDBWorldCountryDataSet.Region);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
 
     }

@@ -31,8 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cartesianChartCP = new LiveCharts.WinForms.CartesianChart();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,22 +66,22 @@
             this.panel2.Size = new System.Drawing.Size(1028, 100);
             this.panel2.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Enter Country Name";
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 20);
+            this.textBox1.Location = new System.Drawing.Point(299, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(125, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enter Country Name";
             // 
             // CountryPC
             // 

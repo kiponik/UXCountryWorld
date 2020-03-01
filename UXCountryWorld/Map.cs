@@ -22,8 +22,8 @@ namespace UXCountryWorld
             LiveCharts.WinForms.GeoMap g = new LiveCharts.WinForms.GeoMap();
             Dictionary<string, double> d = new Dictionary<string, double>();
 
-            d["CZ"] = 1000;
-            d["KZ"] = 100;
+            d["CZ"] = 100;
+            d["KZ"] = 86;
             d["FR"] = 50;
             d["RU"] = 80;
             d["UZ"] = 60;
@@ -34,13 +34,13 @@ namespace UXCountryWorld
             d["CA"] = 30;
             d["NZ"] = 26;
             d["IN"] = 50;
-            d["CN"] = 50;
+            d["CN"] = 10;
             d["GL"] = 50;
 
 
             g.HeatMap = d;
             g.Source = $"{Application.StartupPath}\\map.xml";
-            this.Controls.Add(g);
+            Controls.Add(g);
             g.Dock = DockStyle.Fill;
         }
     }

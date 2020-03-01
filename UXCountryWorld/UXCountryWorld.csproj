@@ -117,11 +117,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalDBWorldCountryDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalDBWorldCountryDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="LocalDBWorldCountryDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,6 +193,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegionalData.resx">
       <DependentUpon>RegionalData.cs</DependentUpon>
@@ -208,19 +204,8 @@
     <None Include="countryCZ.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="countrykz.csv">
+    <None Include="countryKZ.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="LocalDBWorldCountryDataSet1.xsc">
-      <DependentUpon>LocalDBWorldCountryDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="LocalDBWorldCountryDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LocalDBWorldCountryDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LocalDBWorldCountryDataSet1.xss">
-      <DependentUpon>LocalDBWorldCountryDataSet1.xsd</DependentUpon>
     </None>
     <None Include="LocalDBWorldCountryDataSet2.xsc">
       <DependentUpon>LocalDBWorldCountryDataSet2.xsd</DependentUpon>
@@ -263,6 +248,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\czu-cz-zelena-transparentni-900x600x300dpi.gif" />
     <Content Include="LocalDBWorldCountry.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -293,6 +279,8 @@
       <DependentUpon>RegPopulation.edmx</DependentUpon>
       <LastGenOutput>RegPopulation.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\czu-cz-cerna-transparentni-900x600x300dpi.gif" />
+    <None Include="Resources\czu-cz-zelena-transparentni-900x600x300dpi.gif" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

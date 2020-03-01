@@ -110,7 +110,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "RegionalData";
             this.Text = "RegionalData";
-            this.Load += new System.EventHandler(this.RegionalData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.localDBWorldCountryDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);

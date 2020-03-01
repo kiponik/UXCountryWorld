@@ -9,7 +9,7 @@ namespace UXCountryWorld
     public class Population
     {
         public Guid Id { get; set; }
-        public string Year { get; set; }
+        public string Name { get; set; }
         public double CountryPopulation { get; set; }
     }
 }

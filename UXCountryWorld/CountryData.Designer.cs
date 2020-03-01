@@ -38,7 +38,6 @@
             System.Windows.Forms.Label nameLabel1;
             System.Windows.Forms.Label capitalLabel1;
             System.Windows.Forms.Label populationLabel1;
-            System.Windows.Forms.Label regionIDLabel1;
             System.Windows.Forms.Label codeLabel2;
             this.localDBWorldCountryDataSet = new UXCountryWorld.LocalDBWorldCountryDataSet();
             this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,7 +50,6 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.capitalTextBox = new System.Windows.Forms.TextBox();
             this.populationTextBox = new System.Windows.Forms.TextBox();
-            this.regionIDTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             idLabel = new System.Windows.Forms.Label();
@@ -63,7 +61,6 @@
             nameLabel1 = new System.Windows.Forms.Label();
             capitalLabel1 = new System.Windows.Forms.Label();
             populationLabel1 = new System.Windows.Forms.Label();
-            regionIDLabel1 = new System.Windows.Forms.Label();
             codeLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.localDBWorldCountryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
@@ -134,7 +131,6 @@
             nameLabel1.Size = new System.Drawing.Size(49, 17);
             nameLabel1.TabIndex = 2;
             nameLabel1.Text = "Name:";
-            nameLabel1.Click += new System.EventHandler(this.nameLabel1_Click);
             // 
             // capitalLabel1
             // 
@@ -144,7 +140,6 @@
             capitalLabel1.Size = new System.Drawing.Size(55, 17);
             capitalLabel1.TabIndex = 6;
             capitalLabel1.Text = "Capital:";
-            capitalLabel1.Click += new System.EventHandler(this.capitalLabel1_Click);
             // 
             // populationLabel1
             // 
@@ -154,17 +149,6 @@
             populationLabel1.Size = new System.Drawing.Size(79, 17);
             populationLabel1.TabIndex = 8;
             populationLabel1.Text = "Population:";
-            populationLabel1.Click += new System.EventHandler(this.populationLabel1_Click);
-            // 
-            // regionIDLabel1
-            // 
-            regionIDLabel1.AutoSize = true;
-            regionIDLabel1.Location = new System.Drawing.Point(61, 187);
-            regionIDLabel1.Name = "regionIDLabel1";
-            regionIDLabel1.Size = new System.Drawing.Size(74, 17);
-            regionIDLabel1.TabIndex = 10;
-            regionIDLabel1.Text = "Region ID:";
-            regionIDLabel1.Click += new System.EventHandler(this.regionIDLabel1_Click);
             // 
             // codeLabel2
             // 
@@ -174,7 +158,6 @@
             codeLabel2.Size = new System.Drawing.Size(45, 17);
             codeLabel2.TabIndex = 11;
             codeLabel2.Text = "Code:";
-            codeLabel2.Click += new System.EventHandler(this.codeLabel2_Click);
             // 
             // localDBWorldCountryDataSet
             // 
@@ -217,8 +200,6 @@
             this.panel1.Controls.Add(this.capitalTextBox);
             this.panel1.Controls.Add(populationLabel1);
             this.panel1.Controls.Add(this.populationTextBox);
-            this.panel1.Controls.Add(regionIDLabel1);
-            this.panel1.Controls.Add(this.regionIDTextBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -229,7 +210,7 @@
             // 
             this.codeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.countryBindingSource, "Code", true));
             this.codeComboBox.FormattingEnabled = true;
-            this.codeComboBox.Location = new System.Drawing.Point(144, 65);
+            this.codeComboBox.Location = new System.Drawing.Point(178, 65);
             this.codeComboBox.Name = "codeComboBox";
             this.codeComboBox.Size = new System.Drawing.Size(121, 24);
             this.codeComboBox.TabIndex = 12;
@@ -238,38 +219,26 @@
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.countryBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(146, 100);
+            this.nameTextBox.Location = new System.Drawing.Point(185, 100);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 22);
             this.nameTextBox.TabIndex = 3;
-            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
             // capitalTextBox
             // 
             this.capitalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.countryBindingSource, "Capital", true));
-            this.capitalTextBox.Location = new System.Drawing.Point(146, 128);
+            this.capitalTextBox.Location = new System.Drawing.Point(185, 128);
             this.capitalTextBox.Name = "capitalTextBox";
             this.capitalTextBox.Size = new System.Drawing.Size(100, 22);
             this.capitalTextBox.TabIndex = 7;
-            this.capitalTextBox.TextChanged += new System.EventHandler(this.capitalTextBox_TextChanged);
             // 
             // populationTextBox
             // 
             this.populationTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.countryBindingSource, "Population", true));
-            this.populationTextBox.Location = new System.Drawing.Point(146, 156);
+            this.populationTextBox.Location = new System.Drawing.Point(185, 156);
             this.populationTextBox.Name = "populationTextBox";
             this.populationTextBox.Size = new System.Drawing.Size(100, 22);
             this.populationTextBox.TabIndex = 9;
-            this.populationTextBox.TextChanged += new System.EventHandler(this.populationTextBox_TextChanged);
-            // 
-            // regionIDTextBox
-            // 
-            this.regionIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.countryBindingSource, "RegionID", true));
-            this.regionIDTextBox.Location = new System.Drawing.Point(146, 184);
-            this.regionIDTextBox.Name = "regionIDTextBox";
-            this.regionIDTextBox.Size = new System.Drawing.Size(100, 22);
-            this.regionIDTextBox.TabIndex = 11;
-            this.regionIDTextBox.TextChanged += new System.EventHandler(this.regionIDTextBox_TextChanged);
             // 
             // panel2
             // 
@@ -330,6 +299,5 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox capitalTextBox;
         private System.Windows.Forms.TextBox populationTextBox;
-        private System.Windows.Forms.TextBox regionIDTextBox;
     }
 }

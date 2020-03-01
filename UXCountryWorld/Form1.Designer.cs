@@ -32,42 +32,41 @@
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label populationLabel;
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.ibtnInfoData = new FontAwesome.Sharp.IconButton();
             this.panelCountryDataSubMenu = new System.Windows.Forms.Panel();
-            this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.localDBWorldCountryDataSet1 = new UXCountryWorld.LocalDBWorldCountryDataSet1();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.ibtnCountryPopulation = new FontAwesome.Sharp.IconButton();
-            this.ibtnCountryData = new FontAwesome.Sharp.IconButton();
             this.panelWorldDataSubMenu = new System.Windows.Forms.Panel();
-            this.ibtnCountyPC = new FontAwesome.Sharp.IconButton();
-            this.ibtnMap = new FontAwesome.Sharp.IconButton();
-            this.ibtnPopulation = new FontAwesome.Sharp.IconButton();
-            this.ibtnWorld = new FontAwesome.Sharp.IconButton();
             this.panelTopLeft = new System.Windows.Forms.Panel();
+            this.countryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelForButtons = new System.Windows.Forms.Panel();
             this.populationTextBox = new System.Windows.Forms.TextBox();
             this.earthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.localDBWorldCountryDataSet = new UXCountryWorld.LocalDBWorldCountryDataSet();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.countryTableAdapter = new UXCountryWorld.LocalDBWorldCountryDataSet1TableAdapters.CountryTableAdapter();
             this.earthTableAdapter = new UXCountryWorld.LocalDBWorldCountryDataSetTableAdapters.EarthTableAdapter();
             this.tableAdapterManager = new UXCountryWorld.LocalDBWorldCountryDataSetTableAdapters.TableAdapterManager();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ibtnInfoData = new FontAwesome.Sharp.IconButton();
+            this.ibtnCountryPopulation = new FontAwesome.Sharp.IconButton();
+            this.ibtnCountryData = new FontAwesome.Sharp.IconButton();
+            this.ibtnCountyPC = new FontAwesome.Sharp.IconButton();
+            this.ibtnMap = new FontAwesome.Sharp.IconButton();
+            this.ibtnPopulation = new FontAwesome.Sharp.IconButton();
+            this.ibtnWorld = new FontAwesome.Sharp.IconButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             populationLabel = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelCountryDataSubMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.localDBWorldCountryDataSet1)).BeginInit();
             this.panelWorldDataSubMenu.SuspendLayout();
+            this.panelTopLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).BeginInit();
             this.panelForButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earthBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.localDBWorldCountryDataSet)).BeginInit();
             this.panelContainer.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -92,7 +91,7 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panelMenu.Controls.Add(this.ibtnInfoData);
+            this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.panelCountryDataSubMenu);
             this.panelMenu.Controls.Add(this.ibtnCountryData);
             this.panelMenu.Controls.Add(this.panelWorldDataSubMenu);
@@ -103,11 +102,118 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 556);
             this.panelMenu.TabIndex = 0;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            // 
+            // panelCountryDataSubMenu
+            // 
+            this.panelCountryDataSubMenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelCountryDataSubMenu.Controls.Add(this.ibtnCountryPopulation);
+            this.panelCountryDataSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCountryDataSubMenu.Location = new System.Drawing.Point(0, 311);
+            this.panelCountryDataSubMenu.Name = "panelCountryDataSubMenu";
+            this.panelCountryDataSubMenu.Size = new System.Drawing.Size(250, 45);
+            this.panelCountryDataSubMenu.TabIndex = 9;
+            // 
+            // panelWorldDataSubMenu
+            // 
+            this.panelWorldDataSubMenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelWorldDataSubMenu.Controls.Add(this.ibtnCountyPC);
+            this.panelWorldDataSubMenu.Controls.Add(this.ibtnMap);
+            this.panelWorldDataSubMenu.Controls.Add(this.ibtnPopulation);
+            this.panelWorldDataSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelWorldDataSubMenu.Location = new System.Drawing.Point(0, 133);
+            this.panelWorldDataSubMenu.Name = "panelWorldDataSubMenu";
+            this.panelWorldDataSubMenu.Size = new System.Drawing.Size(250, 128);
+            this.panelWorldDataSubMenu.TabIndex = 7;
+            // 
+            // panelTopLeft
+            // 
+            this.panelTopLeft.Controls.Add(this.pictureBox2);
+            this.panelTopLeft.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTopLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelTopLeft.Name = "panelTopLeft";
+            this.panelTopLeft.Size = new System.Drawing.Size(250, 83);
+            this.panelTopLeft.TabIndex = 1;
+            // 
+            // countryBindingSource
+            // 
+            // 
+            // localDBWorldCountryDataSet1
+            // 
+            // panelForButtons
+            // 
+            this.panelForButtons.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelForButtons.Controls.Add(populationLabel);
+            this.panelForButtons.Controls.Add(this.populationTextBox);
+            this.panelForButtons.Controls.Add(nameLabel);
+            this.panelForButtons.Controls.Add(this.nameTextBox);
+            this.panelForButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelForButtons.Location = new System.Drawing.Point(250, 502);
+            this.panelForButtons.Name = "panelForButtons";
+            this.panelForButtons.Size = new System.Drawing.Size(903, 54);
+            this.panelForButtons.TabIndex = 1;
+            // 
+            // populationTextBox
+            // 
+            this.populationTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.earthBindingSource, "Population", true));
+            this.populationTextBox.Location = new System.Drawing.Point(274, 12);
+            this.populationTextBox.Name = "populationTextBox";
+            this.populationTextBox.Size = new System.Drawing.Size(100, 26);
+            this.populationTextBox.TabIndex = 3;
+            // 
+            // earthBindingSource
+            // 
+            this.earthBindingSource.DataMember = "Earth";
+            this.earthBindingSource.DataSource = this.localDBWorldCountryDataSet;
+            // 
+            // localDBWorldCountryDataSet
+            // 
+            this.localDBWorldCountryDataSet.DataSetName = "LocalDBWorldCountryDataSet";
+            this.localDBWorldCountryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.earthBindingSource, "Name", true));
+            this.nameTextBox.Location = new System.Drawing.Point(70, 12);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(100, 26);
+            this.nameTextBox.TabIndex = 1;
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Controls.Add(this.label1);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(250, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(903, 502);
+            this.panelContainer.TabIndex = 2;
+            // 
+            // countryTableAdapter
+            // 
+            // 
+            // earthTableAdapter
+            // 
+            this.earthTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CountryTableAdapter = null;
+            this.tableAdapterManager.EarthTableAdapter = this.earthTableAdapter;
+            this.tableAdapterManager.RegionTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = UXCountryWorld.LocalDBWorldCountryDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ibtnInfoData);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 502);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(250, 54);
+            this.panel1.TabIndex = 11;
             // 
             // ibtnInfoData
             // 
-            this.ibtnInfoData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnInfoData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ibtnInfoData.FlatAppearance.BorderSize = 0;
             this.ibtnInfoData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnInfoData.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -116,79 +222,15 @@
             this.ibtnInfoData.IconColor = System.Drawing.Color.WhiteSmoke;
             this.ibtnInfoData.IconSize = 30;
             this.ibtnInfoData.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnInfoData.Location = new System.Drawing.Point(0, 458);
+            this.ibtnInfoData.Location = new System.Drawing.Point(0, 0);
             this.ibtnInfoData.Name = "ibtnInfoData";
             this.ibtnInfoData.Rotation = 0D;
-            this.ibtnInfoData.Size = new System.Drawing.Size(250, 48);
+            this.ibtnInfoData.Size = new System.Drawing.Size(250, 54);
             this.ibtnInfoData.TabIndex = 10;
             this.ibtnInfoData.Text = "Info";
             this.ibtnInfoData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnInfoData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnInfoData.UseVisualStyleBackColor = true;
-            // 
-            // panelCountryDataSubMenu
-            // 
-            this.panelCountryDataSubMenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelCountryDataSubMenu.Controls.Add(this.iconButton2);
-            this.panelCountryDataSubMenu.Controls.Add(this.iconButton3);
-            this.panelCountryDataSubMenu.Controls.Add(this.ibtnCountryPopulation);
-            this.panelCountryDataSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCountryDataSubMenu.Location = new System.Drawing.Point(0, 311);
-            this.panelCountryDataSubMenu.Name = "panelCountryDataSubMenu";
-            this.panelCountryDataSubMenu.Size = new System.Drawing.Size(250, 147);
-            this.panelCountryDataSubMenu.TabIndex = 9;
-            // 
-            // countryBindingSource
-            // 
-            this.countryBindingSource.DataMember = "Country";
-            this.countryBindingSource.DataSource = this.localDBWorldCountryDataSet1;
-            // 
-            // localDBWorldCountryDataSet1
-            // 
-            this.localDBWorldCountryDataSet1.DataSetName = "LocalDBWorldCountryDataSet1";
-            this.localDBWorldCountryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.GlobeAfrica;
-            this.iconButton2.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButton2.IconSize = 32;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 82);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(250, 30);
-            this.iconButton2.TabIndex = 3;
-            this.iconButton2.Text = "Poor Level";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.GlobeAfrica;
-            this.iconButton3.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButton3.IconSize = 32;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 41);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Rotation = 0D;
-            this.iconButton3.Size = new System.Drawing.Size(250, 41);
-            this.iconButton3.TabIndex = 2;
-            this.iconButton3.Text = "Economics Data";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
             // 
             // ibtnCountryPopulation
             // 
@@ -233,19 +275,6 @@
             this.ibtnCountryData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnCountryData.UseVisualStyleBackColor = true;
             this.ibtnCountryData.Click += new System.EventHandler(this.ibtnCountryData_Click);
-            // 
-            // panelWorldDataSubMenu
-            // 
-            this.panelWorldDataSubMenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelWorldDataSubMenu.Controls.Add(this.ibtnCountyPC);
-            this.panelWorldDataSubMenu.Controls.Add(this.ibtnMap);
-            this.panelWorldDataSubMenu.Controls.Add(this.ibtnPopulation);
-            this.panelWorldDataSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelWorldDataSubMenu.Location = new System.Drawing.Point(0, 133);
-            this.panelWorldDataSubMenu.Name = "panelWorldDataSubMenu";
-            this.panelWorldDataSubMenu.Size = new System.Drawing.Size(250, 128);
-            this.panelWorldDataSubMenu.TabIndex = 7;
-            this.panelWorldDataSubMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelWorldDataSubMenu_Paint);
             // 
             // ibtnCountyPC
             // 
@@ -335,96 +364,27 @@
             this.ibtnWorld.UseVisualStyleBackColor = true;
             this.ibtnWorld.Click += new System.EventHandler(this.ibtnWorld_Click);
             // 
-            // panelTopLeft
+            // pictureBox2
             // 
-            this.panelTopLeft.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelTopLeft.Name = "panelTopLeft";
-            this.panelTopLeft.Size = new System.Drawing.Size(250, 83);
-            this.panelTopLeft.TabIndex = 1;
-            // 
-            // panelForButtons
-            // 
-            this.panelForButtons.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelForButtons.Controls.Add(populationLabel);
-            this.panelForButtons.Controls.Add(this.populationTextBox);
-            this.panelForButtons.Controls.Add(nameLabel);
-            this.panelForButtons.Controls.Add(this.nameTextBox);
-            this.panelForButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelForButtons.Location = new System.Drawing.Point(250, 502);
-            this.panelForButtons.Name = "panelForButtons";
-            this.panelForButtons.Size = new System.Drawing.Size(903, 54);
-            this.panelForButtons.TabIndex = 1;
-            // 
-            // populationTextBox
-            // 
-            this.populationTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.earthBindingSource, "Population", true));
-            this.populationTextBox.Location = new System.Drawing.Point(274, 12);
-            this.populationTextBox.Name = "populationTextBox";
-            this.populationTextBox.Size = new System.Drawing.Size(100, 26);
-            this.populationTextBox.TabIndex = 3;
-            // 
-            // earthBindingSource
-            // 
-            this.earthBindingSource.DataMember = "Earth";
-            this.earthBindingSource.DataSource = this.localDBWorldCountryDataSet;
-            // 
-            // localDBWorldCountryDataSet
-            // 
-            this.localDBWorldCountryDataSet.DataSetName = "LocalDBWorldCountryDataSet";
-            this.localDBWorldCountryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.earthBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(70, 12);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 26);
-            this.nameTextBox.TabIndex = 1;
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Controls.Add(this.label2);
-            this.panelContainer.Controls.Add(this.label1);
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(250, 0);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(903, 502);
-            this.panelContainer.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.pictureBox2.Image = global::UXCountryWorld.Properties.Resources.czu_cz_cerna_transparentni_900x600x300dpi;
+            this.pictureBox2.Location = new System.Drawing.Point(44, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(143, 68);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 9);
+            this.label1.Location = new System.Drawing.Point(293, 225);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.Size = new System.Drawing.Size(324, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
-            // countryTableAdapter
-            // 
-            this.countryTableAdapter.ClearBeforeFill = true;
-            // 
-            // earthTableAdapter
-            // 
-            this.earthTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CountryTableAdapter = null;
-            this.tableAdapterManager.EarthTableAdapter = this.earthTableAdapter;
-            this.tableAdapterManager.RegionTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = UXCountryWorld.LocalDBWorldCountryDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.label1.Text = "Please select any button to represent data";
             // 
             // Form1
             // 
@@ -442,15 +402,17 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelCountryDataSubMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.localDBWorldCountryDataSet1)).EndInit();
             this.panelWorldDataSubMenu.ResumeLayout(false);
+            this.panelTopLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.countryBindingSource)).EndInit();
             this.panelForButtons.ResumeLayout(false);
             this.panelForButtons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earthBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.localDBWorldCountryDataSet)).EndInit();
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,20 +430,17 @@
         private FontAwesome.Sharp.IconButton ibtnWorld;
         private FontAwesome.Sharp.IconButton ibtnInfoData;
         private System.Windows.Forms.Panel panelCountryDataSubMenu;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton ibtnCountryPopulation;
         private FontAwesome.Sharp.IconButton ibtnCountryData;
-        private LocalDBWorldCountryDataSet1 localDBWorldCountryDataSet1;
         private System.Windows.Forms.BindingSource countryBindingSource;
-        private LocalDBWorldCountryDataSet1TableAdapters.CountryTableAdapter countryTableAdapter;
         private LocalDBWorldCountryDataSet localDBWorldCountryDataSet;
         private System.Windows.Forms.BindingSource earthBindingSource;
         private LocalDBWorldCountryDataSetTableAdapters.EarthTableAdapter earthTableAdapter;
         private LocalDBWorldCountryDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox populationTextBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
     }
 }

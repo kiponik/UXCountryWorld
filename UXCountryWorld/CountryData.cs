@@ -22,6 +22,7 @@ namespace UXCountryWorld
 {
     public partial class CountryData : Form
     {
+        static CartesianMapper<PopulationOfCountry> mapper;
 
         public CountryData()
         {
@@ -29,9 +30,10 @@ namespace UXCountryWorld
             fillComboBox();
 
 
-            var mapper = Mappers.Xy<PopulationOfCountry>()
+            mapper = Mappers.Xy<PopulationOfCountry>()
                 .X((population, index) => index)
                 .Y(population => population.CountryPopulation);
+            PopulationByYear.GetCSV("CZ");
 
             var records = PopulationByYear.Countries.ToArray();
 
@@ -57,7 +59,7 @@ namespace UXCountryWorld
                 DisableAnimations = true,
                 LabelsRotation = 20
             });
-            
+
 
         }
 
@@ -67,49 +69,6 @@ namespace UXCountryWorld
         public ChartValues<PopulationOfCountry> Results { get; set; }
         public List<string> Labels { get; set; }
 
-
-
-
-
-
-        private void btnWrite_Click(object sender, EventArgs e)
-        {
-                
-                    /*using (var sw = new StreamWriter(sfd.FileName))
-                    {
-                        var writer = new CsvWriter(sw, System.Globalization.CultureInfo.InvariantCulture);
-                        writer.WriteHeader(typeof(Population));
-                        foreach (Population s in populationBindingSource.DataSource as List<Population>)
-                        {
-                            writer.WriteRecord(s);
-                        }
-                    }
-                    MessageBox.Show("Your data saved", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
-                
-
-            try
-            {
-                string readFile = File.ReadAllText(@"C:\Users\Айдын\Desktop\test.csv");
-                string[] line = readFile.Split('\n');
-                int count = 0;
-                foreach (string str in line[0].Split(','))
-                {
-                    count++;
-                }
-                /*DGVData.ColumnCount = count;
-                foreach (string s1 in readFile.Split('\n'))
-                {
-                    if (s1 != "")
-                        DGVData.Rows.Add(s1.Split(','));
-                }*/
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error");
-            }
-        }
-
         public void fillComboBox()
         {
             string connectionString;
@@ -118,7 +77,6 @@ namespace UXCountryWorld
             connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Айдын\source\repos\UXCountryWorld\UXCountryWorld\LocalDBWorldCountry.mdf;Integrated Security=True";
 
             cnn = new SqlConnection(connectionString);
-
 
             string sql = "select * from Country;";
             SqlCommand cmd = new SqlCommand(sql, cnn);
@@ -165,11 +123,35 @@ namespace UXCountryWorld
                     string capital = myreader.GetString(3);
                     string population = myreader.GetInt64(4).ToString();
                     string regionID = myreader.GetInt32(5).ToString();
+                    string code = myreader.GetString(2);
                     nameTextBox.Text = name;
                     capitalTextBox.Text = capital;
                     populationTextBox.Text = population;
-                    regionIDTextBox.Text = regionID;
+                    PopulationByYear.GetCSV(code);
+                    var records = PopulationByYear.Countries.ToArray();
+                    Results = records.AsChartValues();
+                    Labels = records.Select(x => x.Year).ToList();
 
+                    cartesianChartCountryPopulation.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Configuration = mapper,
+                    Values = Results
+                }
+            };
+                    cartesianChartCountryPopulation.AxisY = new AxesCollection();
+                    cartesianChartCountryPopulation.AxisX = new AxesCollection();
+                    cartesianChartCountryPopulation.AxisY.Add(new Axis
+                    {
+                        LabelFormatter = value => (value / 1000000).ToString("N") + "M"
+                    });
+                    cartesianChartCountryPopulation.AxisX.Add(new Axis
+                    {
+                        Labels = Labels,
+                        DisableAnimations = true,
+                        LabelsRotation = 20
+                    });
                 }
             }
             catch (Exception ex)
@@ -179,51 +161,6 @@ namespace UXCountryWorld
 
 
         }
-
-        private void codeLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nameLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void capitalLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void capitalTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void populationLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void populationTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void regionIDLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void regionIDTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
-    
+
 }
